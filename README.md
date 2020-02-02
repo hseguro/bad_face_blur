@@ -1,3 +1,6 @@
+# Instalar 'faced'
+`pip install git+https://github.com/hseguro/faced.git`
+
 # Instalar dependencias
 `pip install -r requirements.txt`
 
