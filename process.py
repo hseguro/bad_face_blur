@@ -12,6 +12,7 @@ face_detector = FaceDetector()
 
 DEBUG = bool(int(0 if os.getenv('DEBUG') is None else os.getenv('DEBUG')))
 BLUR = int(23 if os.getenv('BLUR') is None else os.getenv('BLUR'))
+FACED_ACC = float(0.85 if os.getenv('FACED_ACC') is None else os.getenv('FACED_ACC'))
 
 video = cv2.VideoCapture(sys.argv[1])
 
@@ -53,7 +54,7 @@ while video.isOpened():
 
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-    bboxes = face_detector.predict(frame, 0.6)
+    bboxes = face_detector.predict(frame, FACED_ACC)
 
     for (x, y, w, h, acc) in bboxes:
         x = x - (w // 2)

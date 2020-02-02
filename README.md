@@ -11,4 +11,6 @@
 
 `BLUR=3` Para difuminar la imagen (numero impar)
 
+`FACED_ACC=0.6` Accuracy
+
 `DEBUG=1 python process.py input.mp4 output.mp4`
